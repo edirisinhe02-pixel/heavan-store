@@ -9,11 +9,11 @@
   header { background:#fff; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
   header img { height:50px; }
   header a { background:#25D366; color:#fff; padding:10px 15px; text-decoration:none; border-radius:5px; }
-  header p { margin:0; font-weight:bold; color:#555; }
-  .hero { background:#eee; text-align:center; padding:30px 20px; }
-  .hero h1 { margin:0; font-size:2rem; color:#333; }
-  .section-title { font-size:1.5rem; padding:20px; color:#222; text-align:left; }
-  .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:0 20px 20px 20px; }
+  .search-bar { padding:15px 20px; text-align:center; background:#eee; }
+  .search-bar input { width:80%; padding:10px; font-size:1rem; border-radius:5px; border:1px solid #ccc; }
+  .category { padding:20px; }
+  .category h2 { margin-bottom:15px; color:#333; border-bottom:1px solid #ccc; padding-bottom:5px; }
+  .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
   .product { background:#fff; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); overflow:hidden; display:flex; flex-direction:column; }
   .product img { width:100%; object-fit:cover; }
   .product-info { padding:15px; flex:1; display:flex; flex-direction:column; }
@@ -21,154 +21,166 @@
   .product-info p { margin:0 0 10px; font-weight:bold; color:#111; }
   .product-info select { margin-bottom:10px; padding:5px; }
   .product-info a { background:#25D366; color:#fff; text-align:center; padding:10px; border-radius:5px; text-decoration:none; }
-  .coming-soon { padding:15px; color:gray; font-style:italic; }
-  footer { background:#333; color:#fff; text-align:center; padding:20px; }
+  footer { background:#333; color:#fff; text-align:center; padding:20px; margin-top:20px; }
+  .delivery-note { text-align:center; margin-top:5px; color:#555; font-size:0.9rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <img src="logo.png" alt="Heavan Store Logo">
-  <p>Everything Under One Roof</p>
+  <img src="images/logo.png" alt="Heavan Store Logo">
   <a href="https://wa.me/94789045078" target="_blank">WhatsApp Order</a>
 </header>
 
-<section class="hero">
-  <h1>Brand New Household & Kitchen Products – Islandwide Delivery (+400 LKR)</h1>
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search for items..." onkeyup="filterItems()">
+</div>
+
+<!-- Household Items -->
+<section class="category" id="household">
+  <h2>Household Items</h2>
+  <div class="products">
+    <div class="product">
+      <img src="images/dryiron_1.png" alt="Dry Iron">
+      <div class="product-info">
+        <h3>Dry Iron</h3>
+        <p>Rs. 2,999</p>
+        <select>
+          <option value="cod">Cash on Delivery</option>
+          <option value="payfirst">Pay First</option>
+        </select>
+        <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Dry%20Iron">Order via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/gas_cooker_1.png" alt="Gas Cooker">
+      <div class="product-info">
+        <h3>Gas Cooker</h3>
+        <p>Rs. 2,999</p>
+        <select>
+          <option value="cod">Cash on Delivery</option>
+          <option value="payfirst">Pay First</option>
+        </select>
+        <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Gas%20Cooker">Order via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/cookware_13pcs_1.png" alt="13pcs Cookware Set">
+      <img src="images/cookware_13pcs_2.png" alt="13pcs Cookware Set">
+      <div class="product-info">
+        <h3>13pcs Cookware Set</h3>
+        <p>Rs. 3,999</p>
+        <select>
+          <option value="cod">Cash on Delivery</option>
+          <option value="payfirst">Pay First</option>
+        </select>
+        <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%2013pcs%20Cookware%20Set">Order via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/gas_pot_1.png" alt="Glass Gas Pot">
+      <img src="images/gas_pot_2.png" alt="Glass Gas Pot">
+      <div class="product-info">
+        <h3>Glass Gas Pot</h3>
+        <p>Rs. 2,899</p>
+        <select>
+          <option value="cod">Cash on Delivery</option>
+          <option value="payfirst">Pay First</option>
+        </select>
+        <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Glass%20Gas%20Pot">Order via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/juice_mug_1.png" alt="Juice Mug">
+      <div class="product-info">
+        <h3>Juice Mug</h3>
+        <p>Rs. 799</p>
+        <select>
+          <option value="cod">Cash on Delivery</option>
+          <option value="payfirst">Pay First</option>
+        </select>
+        <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Juice%20Mug">Order via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/teacup_6pcs_1.png" alt="6-Piece Teacup Set">
+      <div class="product-info">
+        <h3>6-Piece Teacup Set</h3>
+        <p>Rs. 1,199</p>
+        <select>
+          <option value="cod">Cash on Delivery</option>
+          <option value="payfirst">Pay First</option>
+        </select>
+        <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%206-Piece%20Teacup%20Set">Order via WhatsApp</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- HOUSEHOLD ITEMS -->
-<div class="section-title">Household Items</div>
-<section class="products">
-
-  <!-- Dry Iron -->
-  <div class="product">
-    <img src="images/dryiron_1.png" alt="Dry Iron">
-    <div class="product-info">
-      <h3>Dry Iron</h3>
-      <p>Rs. 2,999</p>
-      <select>
-        <option value="cod">Cash on Delivery</option>
-        <option value="payfirst">Pay First</option>
-      </select>
-      <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Dry%20Iron">Order via WhatsApp</a>
+<!-- Gift Items -->
+<section class="category" id="gifts">
+  <h2>Gift Items</h2>
+  <div class="products">
+    <div class="product">
+      <img src="images/water_bottle_1.png" alt="Fancy Water Bottle">
+      <div class="product-info">
+        <h3>Fancy Water Bottle</h3>
+        <p>Rs. 999</p>
+        <select>
+          <option value="cod">Cash on Delivery</option>
+          <option value="payfirst">Pay First</option>
+        </select>
+        <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Fancy%20Water%20Bottle">Order via WhatsApp</a>
+      </div>
     </div>
   </div>
-
-  <!-- Gas Cooker -->
-  <div class="product">
-    <img src="images/gas_cooker_1.png" alt="Gas Cooker">
-    <div class="product-info">
-      <h3>Gas Cooker</h3>
-      <p>Rs. 2,999</p>
-      <select>
-        <option value="cod">Cash on Delivery</option>
-        <option value="payfirst">Pay First</option>
-      </select>
-      <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Gas%20Cooker">Order via WhatsApp</a>
-    </div>
-  </div>
-
-  <!-- 13pcs Cookware Set -->
-  <div class="product">
-    <img src="images/cookware_13pcs_1.png" alt="13pcs Cookware Set">
-    <img src="images/cookware_13pcs_2.png" alt="13pcs Cookware Set">
-    <div class="product-info">
-      <h3>13pcs Cookware Set</h3>
-      <p>Rs. 3,999</p>
-      <select>
-        <option value="cod">Cash on Delivery</option>
-        <option value="payfirst">Pay First</option>
-      </select>
-      <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%2013pcs%20Cookware%20Set">Order via WhatsApp</a>
-    </div>
-  </div>
-
-  <!-- Glass Gas Pot -->
-  <div class="product">
-    <img src="images/gas_pot_1.png" alt="Glass Gas Pot">
-    <img src="images/gas_pot_2.png" alt="Glass Gas Pot">
-    <div class="product-info">
-      <h3>Glass Gas Pot</h3>
-      <p>Rs. 2,899</p>
-      <select>
-        <option value="cod">Cash on Delivery</option>
-        <option value="payfirst">Pay First</option>
-      </select>
-      <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Glass%20Gas%20Pot">Order via WhatsApp</a>
-    </div>
-  </div>
-
-  <!-- Juice Mug -->
-  <div class="product">
-    <img src="images/juice_mug_1.png" alt="Juice Mug">
-    <div class="product-info">
-      <h3>Juice Mug</h3>
-      <p>Rs. 799</p>
-      <select>
-        <option value="cod">Cash on Delivery</option>
-        <option value="payfirst">Pay First</option>
-      </select>
-      <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Juice%20Mug">Order via WhatsApp</a>
-    </div>
-  </div>
-
-  <!-- 6-Piece Teacup Set -->
-  <div class="product">
-    <img src="images/teacup_6pcs_1.png" alt="6-Piece Teacup Set">
-    <div class="product-info">
-      <h3>6-Piece Teacup Set</h3>
-      <p>Rs. 1,199</p>
-      <select>
-        <option value="cod">Cash on Delivery</option>
-        <option value="payfirst">Pay First</option>
-      </select>
-      <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%206-Piece%20Teacup%20Set">Order via WhatsApp</a>
-    </div>
-  </div>
-
 </section>
 
-<!-- GIFT ITEMS -->
-<div class="section-title">Gift Items</div>
-<section class="products">
-
-  <!-- Fancy Water Bottle -->
-  <div class="product">
-    <img src="images/water_bottle_1.png" alt="Fancy Water Bottle">
-    <div class="product-info">
-      <h3>Fancy Water Bottle</h3>
-      <p>Rs. 999</p>
-      <select>
-        <option value="cod">Cash on Delivery</option>
-        <option value="payfirst">Pay First</option>
-      </select>
-      <a href="https://wa.me/94789045078?text=I%20want%20to%20order%20the%20Fancy%20Water%20Bottle">Order via WhatsApp</a>
-    </div>
+<!-- Fashion Accessories -->
+<section class="category" id="fashion">
+  <h2>Fashion Accessories (Coming Soon)</h2>
+  <div class="products">
+    <!-- Add items later -->
   </div>
-
 </section>
 
-<!-- UPCOMING SECTIONS -->
-
-<div class="section-title">Fashion Accessories</div>
-<section class="products">
-  <p class="coming-soon">Coming Soon</p>
+<!-- Computer Accessories -->
+<section class="category" id="computer">
+  <h2>Computer Accessories (Coming Soon)</h2>
+  <div class="products">
+    <!-- Add items later -->
+  </div>
 </section>
 
-<div class="section-title">Computer Accessories</div>
-<section class="products">
-  <p class="coming-soon">Coming Soon</p>
-</section>
-
-<div class="section-title">Musical Instruments</div>
-<section class="products">
-  <p class="coming-soon">Coming Soon</p>
+<!-- Musical Items -->
+<section class="category" id="music">
+  <h2>Musical Items (Coming Soon)</h2>
+  <div class="products">
+    <!-- Add items later -->
+  </div>
 </section>
 
 <footer>
-  <p>Heavan Store | WhatsApp: +94789045078 | Islandwide Delivery (+400 LKR)</p>
+  <p>Heavan Store | WhatsApp: +94789045078</p>
+  <div class="delivery-note">Islandwide Delivery (+400 LKR)</div>
 </footer>
+
+<script>
+function filterItems() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+  const products = document.querySelectorAll('.product');
+  products.forEach(product => {
+    const text = product.querySelector('h3').textContent.toLowerCase();
+    product.style.display = text.includes(filter) ? '' : 'none';
+  });
+}
+</script>
 
 </body>
 </html>
